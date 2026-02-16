@@ -1,50 +1,68 @@
-Task Manager:
-A simple Task Management application built using the MERN stack that demonstrates secure authentication, protected APIs, and basic frontend integration.
-This project was developed as part of a Backend Developer Intern assignment with a focus on API design, authentication, and scalability.
+# Task Manager - MERN Stack Application
 
-Backend:
-Node.js
-Express.js
-MongoDB (Atlas)
-Mongoose
-JWT (jsonwebtoken)
-bcryptjs
+## Project Overview
+A simple Task Management application demonstrating secure authentication, protected APIs, and frontend-backend integration. Built as part of a Frontend Developer Intern assignment focusing on responsive design, form validation, and API integration.
 
-Frontend:
-React.js
-Axios
-React Router DOM
+## Technology Stack
 
-API Documentation:
-base url-http://localhost:5000/api
+### Backend
+- Node.js & Express.js - Server and API framework
+- MongoDB with Mongoose - Database and ODM
+- JWT & bcryptjs - Authentication and password security
 
-Auth APIs:
-POST /auth/register
-POST /auth/login
+### Frontend
+- React.js - User interface
+- Axios - API communication
+- React Router DOM - Navigation
+- CSS3 - Styling
 
-Task APIs (Protected):
-POST /tasks
-GET /tasks
-DELETE /tasks/:id
+## Core Features
+- User registration and login system
+- JWT-based secure authentication
+- Protected routes on both frontend and backend
+- Create new tasks with title and description
+- View all user's tasks
+- Delete tasks
+- Responsive design for all devices
+- Comprehensive error handling and form validation
 
-How to Run the Project:
+## API Endpoints
 
-1)Clone the Repository
-git clone https://github.com/<your-username>/task-manager.git
-cd task-manager
+### Authentication (Public)
+- **POST /auth/register** - Create new user account
+- **POST /auth/login** - Login and receive JWT token
 
-2)Backend Setup
-cd server
-npm install
-Run backend:
-npm run dev
+### Tasks (Protected - Requires Token)
+- **POST /tasks** - Create a new task
+- **GET /tasks** - Retrieve all tasks for logged-in user
+- **DELETE /tasks/:id** - Delete a specific task
 
-3)Frontend Setup
-cd ../client
-npm install
-npm start
+## Project Structure
+- **Server folder** - Backend with controllers, models, middleware, routes, and config
+- **Client folder** - Frontend with pages (Login, Register, Dashboard), API configuration, and styling
 
-Testing:
-APIs tested using browser and Postman
-Manual frontend integration testing
-Authentication and authorization validated
+## Setup Process
+1. Clone repository from GitHub
+2. Install backend dependencies and configure MongoDB connection
+3. Install frontend dependencies and set API URL
+4. Run backend server on port 5000
+5. Run frontend on port 3000
+
+## Security Implementation
+- Passwords hashed using bcryptjs before storage
+- JWT tokens for session management (24-hour expiration)
+- Protected routes redirect unauthorized users
+- API middleware validates tokens on every request
+- CORS configured for frontend-backend communication
+
+## Database Design
+- **User Model** - Stores name, email, hashed password, timestamps
+- **Task Model** - Stores title, description, user reference, timestamps
+
+## Testing Coverage
+- Backend APIs tested using Postman
+- Manual frontend testing for all user flows
+- Authentication and authorization verified
+- All CRUD operations validated
+- Form validation tested
+- Protected routes access tested
